@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="all_component_title">Component</string>
+    <string name="all_coating_condition">Coating condition</string>
+    <string name="all_overall_paltform_photos">Overall Platform Photos</string>
+    <string name="all_conductor_wellhead"><![CDATA[Conductor & Wellhead]]></string>
+    <string name="all_cp_calibration">Cathodic Protection Calibration</string>
+    <string name="all_riser_clamps">Riser Clamps</string>
+    <string name="all_cathodic_protection">Cathodic Protection</string>
+    <string name="all_riser_title">Riser</string>
+    <string name="all_isims">Isims</string>
+
+</resources>

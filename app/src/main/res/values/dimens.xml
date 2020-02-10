@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_1x">4dp</dimen>
+    <dimen name="margin_2x">8dp</dimen>
+    <dimen name="margin_3x">12dp</dimen>
+    <dimen name="margin_4x">16dp</dimen>
+    <dimen name="margin_5x">20dp</dimen>
+    <dimen name="margin_6x">24dp</dimen>
+    <dimen name="margin_7x">28dp</dimen>
+    <dimen name="margin_7_5x">30dp</dimen>
+    <dimen name="margin_8x">32dp</dimen>
+    <dimen name="margin_9x">36dp</dimen>
+    <dimen name="margin_10x">40dp</dimen>
+    <dimen name="margin_11x">44dp</dimen>
+    <dimen name="margin_12x">48dp</dimen>
+
+    <dimen name="margin_7_5xx">60dp</dimen>
+    <dimen name="margin_9xx">72dp</dimen>
+    <dimen name="margin_10xx">80dp</dimen>
+
+    <dimen name="margin_min">15dp</dimen>
+    <dimen name="margin_minV2">16dp</dimen>
+    <dimen name="margin_small">18dp</dimen>
+    <dimen name="margin_smallV2">19dp</dimen>
+    <dimen name="margin_smallV3">20dp</dimen>
+    <dimen name="margin_base">22dp</dimen>
+    <dimen name="margin_baseV2">24dp</dimen>
+    <dimen name="margin_normal">30dp</dimen>
+    <dimen name="margin_normalV2">32dp</dimen>
+    <dimen name="margin_big">35dp</dimen>
+    <dimen name="margin_bigV2">41dp</dimen>
+    <dimen name="margin_large">45dp</dimen>
+    <dimen name="margin_enlarged">60dp</dimen>
+    <dimen name="margin_max">69dp</dimen>
+    <dimen name="margin_maxV2">80dp</dimen>
+
+    <dimen name="text_size_min">14sp</dimen>
+    <dimen name="text_size_small">16sp</dimen>
+    <dimen name="text_size_smallV2">18sp</dimen>
+    <dimen name="text_size_toolbar">20sp</dimen>
+    <dimen name="text_size_big">24sp</dimen>
+    <dimen name="text_size_max">36sp</dimen>
+
+    <dimen name="padding_normal">25dp</dimen>
+    <dimen name="padding_high">32dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_extra_small">4dp</dimen>
+    <dimen name="padding_normal_12dp">12dp</dimen>
+    <dimen name="padding_tiny">2dp</dimen>
+    <dimen name="login_button_height">56dp</dimen>
+    <dimen name="login_button_width">80dp</dimen>
+
+    <dimen name="corner_radius_normal">8dp</dimen>
+    <dimen name="corner_radius_big">24dp</dimen>
+
+</resources>

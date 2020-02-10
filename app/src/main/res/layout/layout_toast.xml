@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><!--deprecated-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center|top"
+    android:orientation="horizontal"
+    android:padding="@dimen/margin_small">
+
+    <TextView
+        android:id="@+id/tvErrorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/bg_error_view"
+        android:drawablePadding="@dimen/margin_normal"
+        android:freezesText="true"
+        android:gravity="start|center"
+        android:paddingStart="@dimen/padding_normal"
+        android:paddingTop="@dimen/padding_normal_12dp"
+        android:paddingEnd="@dimen/padding_normal"
+        android:paddingBottom="@dimen/padding_normal_12dp"
+        android:textColor="@color/color_white"
+        android:textSize="12sp"
+        tools:ignore="MissingPrefix"
+        tools:text="adjfadjflkadsjfljads" />
+
+</FrameLayout>

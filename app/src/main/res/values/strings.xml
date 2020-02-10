@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Epam_Telescope</string>
+
+    <string name="all_hint_image">image</string>
+    <string name="all_action_login">Log in</string>
+    <string name="all_action_send">Send</string>
+    <string name="all_action_send_code_again">Send code again</string>
+    <string name="all_error_unexpected">Something went wrong</string>
+    <string name="all_error_internal_server">Service is unavailable. Please try again later.</string>
+    <string name="all_error_internet_connection">Internet connection error</string>
+    <string name="all_error_session_expired">Your login has failed. Please try to log in again.</string>
+    <string name="all_error_invalid_email">Invalid email</string>
+    <string name="all_error_passwords_not_match">Your passwords do not match. Please try again.</string>
+    <string name="all_error_not_able_to_use_old_password">Your new password should not be the same as the old password. Please try another one.</string>
+    <string name="all_error_blank_field">This field cannot be blank</string>
+    <string name="all_error_not_implemented">Feature is not implemented</string>
+    <string name="all_error_invalid_number">Invalid number</string>
+    <string name="please_give_permission">Please give permission</string>
 </resources>
