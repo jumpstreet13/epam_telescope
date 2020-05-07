@@ -1,9 +1,6 @@
 package com.abocha.epamtelescope.data.network.models.requests
 
-import com.abocha.epamtelescope.entities.ClampData
-import com.abocha.epamtelescope.entities.RiserClamp
 import com.squareup.moshi.Json
-import org.threeten.bp.format.DateTimeFormatter
 
 /**
  * Created by Oleg Sheliakin on 2020-01-13.
@@ -35,22 +32,3 @@ data class ClampDataRequest(
     val hasGasket: Boolean
 )
 
-fun ClampData.toRequest() =
-    ClampDataRequest(
-        number = number,
-        riserClampType = riserType?.title,
-        platformClampType = clampType?.title,
-        clampElevation = clampElevation,
-        fastenersInfo = issue,
-        hasGasket = hasGasket
-    )
-
-fun RiserClamp.toRequest() =
-    RiserClampsRequest(
-        platform = platformId,
-        campaign = campaignId,
-        inspector = inspectorId,
-        createdDate = date.format(DateTimeFormatter.ISO_ZONED_DATE_TIME),
-        drawingReference = drawingReference,
-        clamps = clamps.map { it.toRequest() }
-    )

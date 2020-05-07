@@ -1,12 +1,17 @@
 package com.abocha.epamtelescope.data.database.daos
 
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.RawQuery
+import androidx.room.Transaction
+import androidx.room.Update
 import androidx.sqlite.db.SimpleSQLiteQuery
 import androidx.sqlite.db.SupportSQLiteQuery
 
 /**
- * Created by Oleg Sheliakin on 2020-01-14.
- * Contact me by email - olegsheliakin@gmail.com
+ * @author Magomedov Abakar
  */
 @Suppress("TooManyFunctions")
 @Dao
@@ -78,5 +83,4 @@ abstract class CrudDao<ENTITY>(private val tableName: String) {
 
     @RawQuery
     protected abstract fun doGetAll(query: SupportSQLiteQuery): List<ENTITY>
-
 }

@@ -1,6 +1,10 @@
 package com.abocha.epamtelescope.data.network.di
 
-import com.abocha.epamtelescope.data.network.services.*
+import com.abocha.epamtelescope.data.network.services.AuthService
+import com.abocha.epamtelescope.data.network.services.ChangePasswordService
+import com.abocha.epamtelescope.data.network.services.MainService
+import com.abocha.epamtelescope.data.network.services.ProfileService
+import com.abocha.epamtelescope.data.network.services.SurveyService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -13,11 +17,6 @@ internal object ServiceModule {
     @Singleton
     @Provides
     fun provideAuthService(@Default retrofit: Retrofit): AuthService = retrofit.create()
-
-    @Singleton
-    @Provides
-    fun provideRecoveryPasswordService(@Default retrofit: Retrofit): RecoveryPasswordService =
-        retrofit.create()
 
     @Singleton
     @Provides

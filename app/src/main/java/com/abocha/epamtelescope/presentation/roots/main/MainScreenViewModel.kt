@@ -5,7 +5,6 @@ import com.abocha.epamtelescope.common.errors.HasErrors
 import com.abocha.epamtelescope.common.mvi.MviViewModel
 import com.abocha.epamtelescope.common.navigation.AppRouter
 import com.abocha.epamtelescope.common.navigation.HasNavigation
-import com.abocha.epamtelescope.entities.User
 import javax.inject.Inject
 
 /**
@@ -14,4 +13,4 @@ import javax.inject.Inject
 class MainScreenViewModel @Inject constructor(
     private val router: AppRouter,
     private val errorHandler: ErrorHandler
-) : MviViewModel<User, Action>(), HasNavigation by router, HasErrors by errorHandler
+) : MviViewModel<Unit, Action>(), HasNavigation by router, HasErrors by errorHandler

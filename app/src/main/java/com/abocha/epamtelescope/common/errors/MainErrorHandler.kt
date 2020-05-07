@@ -2,7 +2,6 @@ package com.abocha.epamtelescope.common.errors
 
 import android.annotation.SuppressLint
 import android.content.Context
-import androidx.arch.core.executor.ArchTaskExecutor
 import androidx.lifecycle.LiveData
 import com.abocha.epamtelescope.R
 import com.abocha.epamtelescope.common.SingleLiveEvent
@@ -13,8 +12,6 @@ import com.abocha.epamtelescope.exceptions.ServiceUnavailableException
 import com.abocha.epamtelescope.exceptions.UserSessionExpiredException
 import com.abocha.epamtelescope.pictures.PermissionsDeniedException
 import com.abocha.epamtelescope.presentation.base.FeatureNotImplementedException
-import com.abocha.epamtelescope.repository.AuthRepository
-import io.reactivex.rxkotlin.subscribeBy
 import timber.log.Timber
 import java.io.IOException
 import java.io.InterruptedIOException
@@ -29,8 +26,7 @@ import javax.inject.Inject
  */
 class MainErrorHandler @Inject constructor(
     private val context: Context,
-    private val router: Router,
-    private val authRepository: AuthRepository
+    private val router: Router
 ) : ErrorHandler {
 
     private val errorEventLiveData: SingleLiveEvent<String> by lazy { SingleLiveEvent<String>() }
@@ -45,7 +41,7 @@ class MainErrorHandler @Inject constructor(
     @SuppressLint("CheckResult")
     override fun handleError(error: Throwable) {
         Timber.e(error)
-        val errorText = map(error)
+    /*    val errorText = map(error)
         if (!ArchTaskExecutor.getInstance().isMainThread) {
             errorEventLiveData.postValue(errorText)
         } else {
@@ -59,7 +55,7 @@ class MainErrorHandler @Inject constructor(
                 .subscribeBy {
                     router.withNavController(openSignInScreenCommand)
                 }
-        }
+        }*/
     }
 
     @Suppress("ComplexMethod")

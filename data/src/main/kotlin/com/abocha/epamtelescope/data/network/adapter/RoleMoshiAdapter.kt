@@ -1,12 +1,8 @@
 package com.abocha.epamtelescope.data.network.adapter
 
-import com.abocha.epamtelescope.entities.Role
-import com.squareup.moshi.FromJson
-import com.squareup.moshi.ToJson
-
 class RoleMoshiAdapter {
 
-    @ToJson
+ /*   @ToJson
     fun toJson(roles: List<Role>): List<String> =
         roles.map { it.name }
 
@@ -18,6 +14,6 @@ class RoleMoshiAdapter {
             "inspector" -> Role.INSPECTOR
             "client" -> Role.CLIENT
             else -> Role.CLIENT
-        }
+        }*/
 
 }

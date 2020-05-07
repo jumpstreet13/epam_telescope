@@ -1,11 +1,6 @@
 package com.abocha.epamtelescope.data.network.adapter
 
-import com.abocha.epamtelescope.entities.ClampData
-import com.abocha.epamtelescope.entities.Dictionary
-import com.abocha.epamtelescope.entities.Photo
-import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
-import com.squareup.moshi.Types
 
 object MoshiProvider {
     val moshi: Moshi by lazy {
@@ -16,7 +11,7 @@ object MoshiProvider {
             .build()
     }
 
-    val listDictionaryAdapter: JsonAdapter<List<Dictionary>> by lazy {
+/*    val listDictionaryAdapter: JsonAdapter<List<Dictionary>> by lazy {
         val type = Types.newParameterizedType(List::class.java, Dictionary::class.java)
         moshi.adapter<List<Dictionary>>(type)
     }
@@ -29,5 +24,5 @@ object MoshiProvider {
     val listPhotoAdapter: JsonAdapter<List<Photo>> by lazy {
         val type = Types.newParameterizedType(List::class.java, Photo::class.java)
         moshi.adapter<List<Photo>>(type)
-    }
+    }*/
 }
