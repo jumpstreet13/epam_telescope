@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_navigation_graph"
+    app:startDestination="@id/nav_entrance">
+
+    <activity
+        android:id="@+id/nav_main_screen"
+        android:name="com.abocha.epamtelescope.presentation.roots.main.MainScreenActivity"
+        android:label="MainScreenActivity" />
+
+    <activity
+        android:id="@+id/nav_entrance"
+        android:name="com.abocha.epamtelescope.presentation.roots.EntranceActivity"
+        android:label="EntranceActivity" />
+
+</navigation>

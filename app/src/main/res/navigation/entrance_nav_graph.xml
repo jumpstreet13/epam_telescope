@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/entrance_nav_graph"
+    app:startDestination="@id/nav_music_list">
+
+
+    <fragment
+        android:id="@+id/nav_music_list"
+        android:name="com.abocha.epamtelescope.presentation.musiclist.MusicListFragment"
+        android:label=""
+        tools:layout="@layout/fragment_music_list" />
+
+    <activity
+        android:id="@+id/nav_entrance"
+        android:name="com.abocha.epamtelescope.presentation.roots.EntranceActivity"
+        android:label="EntranceActivity" />
+
+</navigation>

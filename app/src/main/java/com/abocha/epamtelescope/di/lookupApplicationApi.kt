@@ -2,6 +2,8 @@ package com.abocha.epamtelescope.di
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import com.abocha.epamtelescope.presentation.roots.di.MainApi
+import com.abocha.epamtelescope.presentation.roots.di.MainApiProvider
 
 /**
  * Created by Oleg Sheliakin on 2019-12-24.
@@ -9,6 +11,12 @@ import androidx.fragment.app.FragmentActivity
  */
 fun Fragment.applicationApi(): ApplicationApi =
     this.lookup<ApplicationApiProvider>().applicationApi
+
+fun Fragment.mainApi(): MainApi =
+    this.lookup<MainApiProvider>().mainApi
+
+fun Fragment.navigationApi(): NavigationApi =
+    this.lookup<NavigationApiProvider>().navigationApi
 
 fun FragmentActivity.applicationApi(): ApplicationApi =
     this.lookup<ApplicationApiProvider>().applicationApi

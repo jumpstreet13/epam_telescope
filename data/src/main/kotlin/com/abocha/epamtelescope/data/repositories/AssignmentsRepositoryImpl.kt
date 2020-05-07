@@ -1,7 +1,7 @@
 package com.abocha.epamtelescope.data.repositories
 
 import androidx.work.*
-import com.abocha.epamtelescope.data.database.GirDatabase
+import com.abocha.epamtelescope.data.database.AppDatabase
 import com.abocha.epamtelescope.data.database.daos.AssignmentDao
 import com.abocha.epamtelescope.data.database.daos.PlatformsDao
 import com.abocha.epamtelescope.data.database.daos.WellSlotDao
@@ -25,7 +25,7 @@ class AssignmentsRepositoryImpl @Inject constructor(
     private val assignmentDao: AssignmentDao,
     private val platformsDao: PlatformsDao,
     private val wellSlotDao: WellSlotDao,
-    private val database: GirDatabase,
+    private val database: AppDatabase,
     private val mainService: MainService,
     private val workManager: WorkManager
 ) : AssignmentsRepository {

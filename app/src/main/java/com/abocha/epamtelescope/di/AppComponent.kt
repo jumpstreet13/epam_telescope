@@ -17,7 +17,7 @@ import dagger.Component
     dependencies = [DataApi::class], modules = [CoreModule::class,
         InitializersModule::class]
 )
-interface AppComponent : ApplicationApi, InjectionComponent<TelescopeApplication> {
+interface AppComponent : ApplicationApi, NavigationApi, InjectionComponent<TelescopeApplication> {
 
     @Component.Factory
     interface Factory {
