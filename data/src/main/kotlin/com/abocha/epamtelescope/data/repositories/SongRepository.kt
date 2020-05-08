@@ -4,7 +4,7 @@ import com.abocha.epamtelescope.data.database.AppDatabase
 import com.abocha.epamtelescope.data.database.daos.SongDao
 import com.abocha.epamtelescope.data.database.entities.toDomainModels
 import com.abocha.epamtelescope.data.network.models.responses.toDbEntities
-import com.abocha.epamtelescope.data.network.services.MainService
+import com.abocha.epamtelescope.data.network.services.SpotifyService
 import com.epamtelescope.entities.Song
 import com.epamtelescope.repository.SongGateway
 import io.reactivex.Completable
@@ -16,7 +16,7 @@ import javax.inject.Inject
  */
 class SongRepository @Inject constructor(
     private val songDao: SongDao,
-    private val mainService: MainService,
+    private val spotifyService: SpotifyService,
     private val database: AppDatabase
 ) : SongGateway {
 
@@ -25,7 +25,7 @@ class SongRepository @Inject constructor(
             .map { it.toDomainModels() }
 
     override fun refresh(): Completable =
-        mainService.getSongs()
+        spotifyService.getSongs()
             .doOnSuccess {
                 database.runInTransaction {
                     songDao.replaceAll(it.toDbEntities())

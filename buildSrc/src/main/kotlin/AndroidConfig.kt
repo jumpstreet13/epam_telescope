@@ -30,15 +30,15 @@ interface BuildType {
 
 object BuildTypeDebug : BuildType {
     override val isMinifyEnabled = false
-    override val baseUrl: String = "\"http://54.173.23.68/api/v1/\""
+    override val baseUrl: String = "https://api.spotify.com/"
 }
 
 object BuildTypeStaging : BuildType {
     override val isMinifyEnabled = false
-    override val baseUrl: String = "\"http://ec2-54-211-158-50.compute-1.amazonaws.com/api/v1/\""
+    override val baseUrl: String = "https://api.spotify.com/"
 }
 
 object BuildTypeRelease : BuildType {
     override val isMinifyEnabled = true
-    override val baseUrl: String = "\"http://ec2-54-211-158-50.compute-1.amazonaws.com/api/v1/\""
+    override val baseUrl: String = "https://api.spotify.com/"
 }

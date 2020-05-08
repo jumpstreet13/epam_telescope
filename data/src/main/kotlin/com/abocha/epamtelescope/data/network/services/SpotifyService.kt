@@ -8,7 +8,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 
-interface MainService {
+interface SpotifyService {
 
     @GET("fs")
     fun getSongs(): Single<List<SongResponse>>
