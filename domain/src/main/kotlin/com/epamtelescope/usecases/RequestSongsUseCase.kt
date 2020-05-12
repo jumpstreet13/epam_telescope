@@ -9,16 +9,21 @@ import javax.inject.Inject
 /**
  * @author Magomedov Abakar
  */
-class RefreshSongsUseCase @Inject constructor(
+class RequestSongsUseCase @Inject constructor(
     private val songGateway: SongGateway
 ) {
     private val statusPublisher: PublishSubject<Status> = PublishSubject.create()
+    var offset = 0
 
-    fun execute(): Completable =
-        songGateway.refresh()
+    fun execute(dropOffset: Boolean = false): Completable {
+        if (dropOffset) {
+            offset = 0
+        }
+        return songGateway.requestSongList(20, offset) //todo Константа
             .doOnError { statusPublisher.onNext(Status.Error(it)) }
             .doOnSubscribe { statusPublisher.onNext(Status.Loading) }
             .doOnComplete { statusPublisher.onNext(Status.Success) }
+    }
 
     fun observeStatus(): Observable<Status> =
         statusPublisher.hide()

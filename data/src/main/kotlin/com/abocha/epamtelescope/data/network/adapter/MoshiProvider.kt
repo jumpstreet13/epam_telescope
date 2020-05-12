@@ -5,7 +5,7 @@ import com.squareup.moshi.Moshi
 object MoshiProvider {
     val moshi: Moshi by lazy {
         Moshi.Builder()
-            .add(RoleMoshiAdapter())
+            //.add(RoleMoshiAdapter())
             .add(ZonedDateTimeAdapter)
             .add(LocalDateAdapter)
             .build()

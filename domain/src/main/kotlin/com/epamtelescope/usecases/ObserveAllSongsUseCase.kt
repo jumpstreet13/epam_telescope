@@ -8,7 +8,7 @@ import javax.inject.Inject
 /**
  * @author Magomedov Abakar
  */
-class GetAllSongsUseCase @Inject constructor(private val songGateway: SongGateway) {
+class ObserveAllSongsUseCase @Inject constructor(private val songGateway: SongGateway) {
 
     fun execute(): Flowable<List<Song>> =
         songGateway.streamAllSongs()

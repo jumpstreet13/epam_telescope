@@ -10,9 +10,9 @@ import com.epamtelescope.entities.Song
  */
 @Entity(tableName = TABLE_NAME)
 data class SongEntity(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     val id: Long = 0,
-    val songUrl: String
+    val songTitle: String
 ) {
     companion object {
         const val TABLE_NAME = "song_entity"
@@ -21,7 +21,8 @@ data class SongEntity(
 
 fun SongEntity.toDomainModel(): Song =
     Song(
-        songUrl = songUrl
+        id = id,
+        songTitle = songTitle
     )
 
 fun List<SongEntity>.toDomainModels(): List<Song> =

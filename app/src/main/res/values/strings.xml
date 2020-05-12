@@ -16,4 +16,6 @@
     <string name="all_error_not_implemented">Feature is not implemented</string>
     <string name="all_error_invalid_number">Invalid number</string>
     <string name="please_give_permission">Please give permission</string>
+    <string name="retry">retry</string>
+    <string name="can_not_load_data">Can not load data</string>
 </resources>

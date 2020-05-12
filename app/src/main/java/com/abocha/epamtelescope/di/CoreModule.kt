@@ -28,5 +28,4 @@ interface CoreModule {
     @PerApplication
     @Binds
     fun bindRouter(impl: AppRouter): Router
-
 }

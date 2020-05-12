@@ -9,5 +9,5 @@ import io.reactivex.Flowable
  */
 interface SongGateway {
     fun streamAllSongs(): Flowable<List<Song>>
-    fun refresh(): Completable
+    fun requestSongList(limit: Int, offset: Int): Completable
 }

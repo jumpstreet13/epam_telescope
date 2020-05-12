@@ -6,4 +6,9 @@
     <color name="color_white">#FFFFFFFF</color>
     <color name="text_green">#53c275</color>
     <color name="color_error_view">#ff768e</color>
+    <color name="text_red">#ff768e</color>
+    <color name="divider_10">#1aefefef</color>
+    <color name="divider">#efefef</color>
+    <color name="divider_light">#f8f8f8</color>
+    <color name="divider_dark">#808c96a3</color>
 </resources>

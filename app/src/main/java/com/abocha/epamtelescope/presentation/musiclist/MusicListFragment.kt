@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.abocha.epamtelescope.R
 import com.abocha.epamtelescope.common.hideKeyboard
 import com.abocha.epamtelescope.presentation.base.BaseFragment
+import com.abocha.epamtelescope.presentation.helper.ScrollingButtonHelper
+import com.abocha.epamtelescope.presentation.musiclist.adapter.MusicListAdapter
 import com.abocha.epamtelescope.presentation.musiclist.di.MusicListComponent
+import com.wishbox.core.presentation.api.pagination.Paginator
 import kotlinx.android.synthetic.main.fragment_music_list.*
 import javax.inject.Inject
 
@@ -19,6 +22,12 @@ class MusicListFragment : BaseFragment(R.layout.fragment_music_list) {
 
     @Inject
     lateinit var musicListAdapter: MusicListAdapter
+
+    @Inject
+    lateinit var paginator: Paginator
+
+    @Inject
+    lateinit var scrollButtonHelper: ScrollingButtonHelper
 
     private val viewModel: MusicListViewModel by viewModels(factoryProducer = { viewModelFactory })
 
@@ -31,6 +40,8 @@ class MusicListFragment : BaseFragment(R.layout.fragment_music_list) {
         activity?.hideKeyboard()
         setupView()
         bindViewModel()
+        viewModel.dispatch(Action.Refresh)
+        //scrollButtonHelper.withRecyclerView(recyclerFriends, buttonAdd) example
     }
 
     private fun setupView() {
@@ -42,10 +53,20 @@ class MusicListFragment : BaseFragment(R.layout.fragment_music_list) {
             adapter = musicListAdapter
             layoutManager = LinearLayoutManager(context)
         }
+    }
 
-        musicListAdapter.songClicks = {
-            viewModel.dispatch(Action.PlayMusic(it.songUrl))
-        }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        paginator.onSaveInstanceState(outState)
+        musicListAdapter.onSaveInstanceState(outState)
+        scrollButtonHelper.onSaveInstanceState(outState)
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        paginator.onViewStateRestored(savedInstanceState)
+        musicListAdapter.onRestoreInstanceState(savedInstanceState)
+        scrollButtonHelper.onViewStateRestored(savedInstanceState)
     }
 
 
@@ -53,7 +74,7 @@ class MusicListFragment : BaseFragment(R.layout.fragment_music_list) {
         viewModel.state.observeOnView {
             swipeToRefresh.isRefreshing = it.isLoading
             emptyText.isVisible = it.isEmpty
-            musicListAdapter.submitList(it.songUrls)
+            musicListAdapter.items = it.songs
         }
     }
 }

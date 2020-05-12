@@ -84,6 +84,11 @@ dependencies {
     implementation(Deps.RX_KOTLIN)
     implementation(Deps.RX_RELAY)
     implementation(Deps.RX_ANDROID)
+    implementation(Deps.ADAPTER_DELEGATE)
+    implementation(Deps.RX_BINDING)
+    implementation(Deps.RX_BINDING_CORE)
+    implementation(Deps.SWIPTE_REVEAL)
+
     implementation(Deps.RX_PAPARAZZO)
 
     implementation(Deps.FLEX_BOX)

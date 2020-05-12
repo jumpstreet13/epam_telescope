@@ -3,7 +3,7 @@ package com.abocha.epamtelescope.data.network.di
 import com.abocha.epamtelescope.data.network.services.AuthService
 import com.abocha.epamtelescope.data.network.services.ChangePasswordService
 import com.abocha.epamtelescope.data.network.services.ProfileService
-import com.abocha.epamtelescope.data.network.services.SpotifyService
+import com.abocha.epamtelescope.data.network.services.DeezerService
 import com.abocha.epamtelescope.data.network.services.SurveyService
 import dagger.Module
 import dagger.Provides
@@ -30,7 +30,7 @@ internal object ServiceModule {
 
     @Singleton
     @Provides
-    fun provideMainService(@OAuth retrofit: Retrofit): SpotifyService =
+    fun provideMainService(@OAuth retrofit: Retrofit): DeezerService =
         retrofit.create()
 
     @Singleton
