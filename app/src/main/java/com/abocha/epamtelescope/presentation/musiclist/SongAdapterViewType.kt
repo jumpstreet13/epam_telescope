@@ -7,7 +7,8 @@ sealed class SongAdapterViewType {
 
     data class Song(
         val id: Long,
-        val songTitle: String
+        val songTitle: String,
+        val songUrl: String
     ) : SongAdapterViewType()
 
     object Loading : SongAdapterViewType()

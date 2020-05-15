@@ -17,6 +17,7 @@ class MusicViewMapper @Inject constructor(
     private fun mapToViewType(from: Song): SongAdapterViewType =
         SongAdapterViewType.Song(
             id = from.id,
-            songTitle = from.songTitle
+            songTitle = from.songTitle,
+            songUrl = from.songUrl
         )
 }

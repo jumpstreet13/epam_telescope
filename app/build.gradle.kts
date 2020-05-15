@@ -87,6 +87,7 @@ dependencies {
     implementation(Deps.ADAPTER_DELEGATE)
     implementation(Deps.RX_BINDING)
     implementation(Deps.RX_BINDING_CORE)
+    implementation(Deps.EXO_PLAYER)
     implementation(Deps.SWIPTE_REVEAL)
 
     implementation(Deps.RX_PAPARAZZO)

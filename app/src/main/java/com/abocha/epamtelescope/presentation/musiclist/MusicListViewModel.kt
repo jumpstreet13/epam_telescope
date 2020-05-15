@@ -1,5 +1,6 @@
 package com.abocha.epamtelescope.presentation.musiclist
 
+import android.net.Uri
 import com.abocha.epamtelescope.common.errors.ErrorHandler
 import com.abocha.epamtelescope.common.mvi.MviViewModel
 import com.abocha.epamtelescope.common.navigation.Router
@@ -7,6 +8,8 @@ import com.abocha.epamtelescope.common.throttling
 import com.abocha.epamtelescope.presentation.musiclist.mapper.MusicViewMapper
 import com.epamtelescope.usecases.ObserveAllSongsUseCase
 import com.epamtelescope.usecases.RequestSongsUseCase
+import com.google.android.exoplayer2.ExoPlayer
+import com.google.android.exoplayer2.source.ExtractorMediaSource
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.ofType
 import io.reactivex.rxkotlin.plusAssign
@@ -22,6 +25,8 @@ class MusicListViewModel @Inject constructor(
     private val errorHandler: ErrorHandler,
     private val refreshSongsUseCase: RequestSongsUseCase,
     private val mapper: MusicViewMapper,
+    private val exoPlayer: ExoPlayer,
+    private val extractor: ExtractorMediaSource.Factory,
     getAllSongsUseCase: ObserveAllSongsUseCase
 ) : MviViewModel<State, Action>() {
 
@@ -33,6 +38,8 @@ class MusicListViewModel @Inject constructor(
             .throttling()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeBy {
+                exoPlayer.prepare(extractor.createMediaSource(Uri.parse(it.songUrl)))
+                exoPlayer.playWhenReady = true
             }
 
         compositeDisposable += getAllSongsUseCase
@@ -53,6 +60,7 @@ class MusicListViewModel @Inject constructor(
                     .onErrorComplete()
             }
             .subscribe()
+
 
         compositeDisposable += refreshSongsUseCase.observeStatus()
             .observeOn(AndroidSchedulers.mainThread())
