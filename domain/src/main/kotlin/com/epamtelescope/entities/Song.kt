@@ -5,4 +5,5 @@ package com.epamtelescope.entities
  */
 data class Song(val id: Long,
                 val songTitle: String,
-                val songUrl: String)
+                val songUrl: String,
+                val songDuration: Int)

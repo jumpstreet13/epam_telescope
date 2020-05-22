@@ -13,7 +13,8 @@ data class SongEntity(
     @PrimaryKey
     val id: Long = 0,
     val songTitle: String,
-    val songUrl: String
+    val songUrl: String,
+    val songDuration: Int
 ) {
     companion object {
         const val TABLE_NAME = "song_entity"
@@ -24,7 +25,8 @@ fun SongEntity.toDomainModel(): Song =
     Song(
         id = id,
         songTitle = songTitle,
-        songUrl = songUrl
+        songUrl = songUrl,
+        songDuration = songDuration
     )
 
 fun List<SongEntity>.toDomainModels(): List<Song> =

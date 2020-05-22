@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import com.abocha.epamtelescope.R
 import com.abocha.epamtelescope.common.inflate
 import com.abocha.epamtelescope.presentation.base.BaseViewHolder
+import com.abocha.epamtelescope.presentation.base.secondsToMinutesRepresentation
 import com.abocha.epamtelescope.presentation.musiclist.SongAdapterViewType
 import com.chauthai.swipereveallayout.ViewBinderHelper
 import com.hannesdorfmann.adapterdelegates4.AbsListItemAdapterDelegate
@@ -54,6 +55,8 @@ class MusicListAdapterDelegate constructor(
 
         override fun bind(model: SongAdapterViewType.Song) {
             songName.text = model.songTitle
+            songDuration.text = model.songDuration.secondsToMinutesRepresentation()
+            songProgress.text = "0:00"
             containerView.setOnClickListener {
                 if (adapterPosition >= 0) {
                     songClicks.invoke(model)

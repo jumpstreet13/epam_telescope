@@ -1,20 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
     android:id="@+id/songContainer"
-    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/margin_2x"
-    app:cardCornerRadius="@dimen/corner_radius_normal"
-    android:layout_height="wrap_content">
+    android:padding="@dimen/padding_normal_12dp"
+    app:cardCornerRadius="@dimen/corner_radius_normal">
 
     <TextView
         android:id="@+id/songName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="@dimen/padding_normal"
-        tools:text="Eminem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:freezesText="true"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        app:layout_constraintEnd_toStartOf="@+id/songProgress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Rap gfdsafsafsaf" />
 
-</androidx.cardview.widget.CardView>
+    <SeekBar
+        android:id="@+id/songSeek"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_2x"
+        app:layout_constraintEnd_toStartOf="@+id/songDuration"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/songProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/margin_2x"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toEndOf="@+id/songName"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="0:00" />
+
+    <TextView
+        android:id="@+id/songDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="2:32" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

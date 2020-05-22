@@ -18,6 +18,7 @@ class MusicViewMapper @Inject constructor(
         SongAdapterViewType.Song(
             id = from.id,
             songTitle = from.songTitle,
-            songUrl = from.songUrl
+            songUrl = from.songUrl,
+            songDuration = from.songDuration
         )
 }

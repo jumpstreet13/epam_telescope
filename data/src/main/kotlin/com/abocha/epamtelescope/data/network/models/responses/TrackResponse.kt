@@ -18,14 +18,17 @@ data class TrackResponse(
     @field:Json(name = "title")
     val songTitle: String,
     @field:Json(name = "preview")
-    val songUrl: String
+    val songUrl: String,
+    @field:Json(name = "duration")
+    val songDuration: Int
 )
 
 fun TrackResponse.toDbEntity(): SongEntity =
     SongEntity(
         id = id,
         songTitle = songTitle,
-        songUrl = songUrl
+        songUrl = songUrl,
+        songDuration = songDuration
     )
 
 fun List<TrackResponse>.toDbEntities(): List<SongEntity> =
